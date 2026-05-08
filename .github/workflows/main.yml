@@ -1,0 +1,14 @@
+name: Linha de Montagem CI
+
+on: [push]
+
+jobs:
+  verificacao:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Teste de Qualidade
+        run: |
+          python3 -c "from calculadora import somar; assert somar(2, 2) == 4"
